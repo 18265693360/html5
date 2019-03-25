@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://www.baidu.com" id="form">
+    爱好：
+    <select name="like" id="select">
+        <option value="1">basketball</option>
+        <option value="2">football</option>
+        <option value="3">pingpang</option>
+        <option value="4">valloyball</option>
+        <option value="5">tabletines</option>
+    </select>
+    <br>
+    描述：<input type="text" id="text" required>
+
+    <button id="btn">提交</button>
+</form>
+</body>
+<script>
+    var select = document.querySelector("#select");
+    var text = document.querySelector("#text");
+    var btn = document.querySelector("#btn");
+    var form = document.querySelector("#form")
+
+    //表单阻止事件
+    // btn.onclick = function(e){
+    //     e.preventDefault();
+    // };
+
+    // form.onclick = function(e){
+    //     e.preventDefault();
+    // };
+
+    select.onchange = function () {
+        console.log(this.value);
+    }
+
+    text.onchange = function () {
+        console.log(this.value);
+    }
+    // 失去焦点才会触发onchange事件
+
+    //oninput IE9才能
+    text.oninput = function () {
+        console.log(this.value,'input')
+    }
+    //实时同步 input
+
+    text.onblur = function () {
+        console.log("失去焦点")
+    }
+
+    text.onfocus = function(){
+        console.log("得到焦点")
+    }
+
+    //验证不通过
+    text.oninvalid = function () {
+        console.log("验证不通过")
+    }
+</script>
+</html>

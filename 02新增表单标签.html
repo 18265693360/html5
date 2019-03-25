@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>health information</legend>
+        height: <input type="text" />
+        weight: <input type="text" />
+    </fieldset>
+</form>
+<!--fieldset 元素可将表单内的相关元素分组。-->
+
+<!--<fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。-->
+
+    <!--当一组表单元素放到 <fieldset> 标签内时，浏览器会以特殊方式来显示它们，它们可能有特殊的边界、3D 效果，或者甚至可创建一个子表单来处理这些元素。-->
+
+        <!--<fieldset> 标签没有必需的或唯一的属性-->
+<form action="https://www.baidu.com">
+    <fieldset>
+        <legend>我是标签</legend>
+        用户名：<input type="text">
+        <br>
+        密码：<input type="password">
+        <br>
+        电子邮箱：
+        <input type="email">
+        <br>
+        喜欢颜色：
+        <input type="color">
+        <br>
+        喜欢的网址：
+        <input type="url">
+        <br>
+        数字：
+        <input type="number">
+        <br>
+        范围：<input type="range" max="998" min="0" onchange="console.log(this.value)">
+        <!--定义和用法-->
+        <!--onchange 在元素值改变时触发。-->
+
+        <!--onchange 属性适用于：<input>、<textarea> 以及 <select> 元素。-->
+        <!--<input type="text" name="txt" value="Hello" onchange="checkField(this.value)">-->
+
+        <br>
+        <input type="tel">
+        <p>一定要用tel 移动端开发tel可以直接显示数字九宫格 推荐使用</p>
+
+
+
+
+
+        <input type="time month datetime week month datatime-local">
+    </fieldset>
+</form>
+</body>
+</html>

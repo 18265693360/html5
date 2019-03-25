@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            position: relative;
+        }
+        .control{
+            position: absolute;
+            background: rgba(255,255,255,.6);
+            height: 100px;
+            bottom: 0;
+            left: 0;
+        }
+        video{
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <!--autoplay自动播放已经被Google禁止 废弃属性-->
+    <video src="./video/video.mp4" controls autoplay poster="http://img1.imgtn.bdimg.com/it/u=2181838735,3676637422&fm=26&gp=0.jpg"<!--此处是复制图片地址-->
+    ></video>
+    <!--视频添加背景海报poster-->
+    <div class="control">
+        <button>播放</button>
+        <button>暂停</button>
+        <button>得到播放到第几秒钟</button>
+        <button>跳转到第十秒</button>
+        <button>返回视频的总长</button>
+        <button>设置视频的播放速度为两倍速</button>
+        <button>静音</button>
+        <button>设定音量为一半</button>
+    </div>
+</div>
+</body>
+<script>
+    var btns = document.querySelectorAll('button');
+    var video = document.querySelector('video');
+    btns[0].onclick = function () {
+        video.play();
+    };
+    btns[1].onclick = function () {
+        video.pause();
+    };
+    btns[2].onclick = function () {
+        console.log(video.currentTime)
+    };
+    btns[3].onclick = function () {
+        video.currentTime = 10;
+    }
+    btns[4].onclick = function(){
+        console.log(video.duration)//返回视频总长
+    }
+    btns[5].onclick = function(){
+        video.playbackRate = 2;//2倍速
+    }
+    btns[6].onclick = function(){
+        video.muted = true;//静音
+    }
+    btns[7].onclick = function(){
+        video.volum = 0.5;//设定音量
+    }
+
+    setInterval(()=>{
+        if (video.pause){
+            console.log('视频在暂停')
+        } else{
+            console.log('视频在播放')
+        }
+    },1000)
+</script>
+</html>

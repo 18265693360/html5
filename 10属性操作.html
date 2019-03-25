@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" data-index="1">
+<input type="text" data-index="2">
+<button>变换属性</button>
+</body>
+<script>
+    var inputs = document.querySelectorAll('input')
+    var btn = document.querySelector('button')
+
+    btn.onclick = function () {
+        // console.log(input.getAttribute('type'))
+        // input.setAttribute('type','radio');
+        // console.log(inputs[1].getAttribute('data-index'))
+        // 拿到自定义属性
+
+        console.log(inputs[1].dataset.index)
+        //dataset = getAttribute
+
+
+        //data-xxx 用于图片的懒加载
+    }
+
+
+
+</script>
+</html>
